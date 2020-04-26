@@ -31,7 +31,7 @@ class TrickRepository extends ServiceEntityRepository
             ->setMaxResults($maxValue)
             ->setFirstResult($firstValue)
             ->getQuery()
-            ->getResult()
+            ->getArrayResult()
         ;
     }
 
@@ -40,7 +40,7 @@ class TrickRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('t')
             ->select("count(t.id) as count")
             ->getQuery()
-            ->getResult()
+            ->getArrayResult()
         ;
     }
 
