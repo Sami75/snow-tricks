@@ -5,15 +5,17 @@
 		  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		  <meta http-equiv="x-ua-compatible" content="ie=edge">
 		  <title>Welcome to snow tricks</title>
-		  <!-- Font Awesome -->
-		  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
-		  <!-- Bootstrap core CSS -->
-		  <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
-		  <!-- Material Design Bootstrap -->
-		  <link href="{{asset('css/mdb.min.css')}}" rel="stylesheet">
+
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+      <!-- Bootstrap core CSS -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Material Design Bootstrap -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.3/css/mdb.min.css" rel="stylesheet">
+
 		  <!-- Your custom styles (optional) -->
-		  <link href="{{asset('css/style.min.css')}}" rel="stylesheet">
-      <link href="{{asset('css/mainstyle.css')}}" rel="stylesheet">
+      {{ encore_entry_link_tags('app') }}
+
 		  {% block stylesheets %}{% endblock %}
 
 		</head>
@@ -74,7 +76,7 @@
 
 		  <!-- Full Page Intro -->
 {% block cover%}
-  <div class="view full-page-intro" style="background-image: url({{ asset('img/tricks-HPage.jpg') }}) ; background-repeat: no-repeat; background-size: cover; background-position: center; ">
+  <div class="view full-page-intro" style="background-image: url({{ preload(asset('build/tricks-HPage.jpg')) }}) ; background-repeat: no-repeat; background-size: cover; background-position: center; ">
 
     <!-- Mask & flexbox options-->
     <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -131,13 +133,13 @@
 
 
         <!-- JQuery -->
-				<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-				<!-- Bootstrap tooltips -->
-				<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-				<!-- Bootstrap core JavaScript -->
-				<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
-				<!-- MDB core JavaScript -->
-				<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.6.1/js/mdb.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.3/js/mdb.min.js"></script>
 				<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
 				<script type="text/javascript">
 					
@@ -153,8 +155,8 @@
 					   {% endfor %}
  					{% endfor %}
         </script>
-        <script type="text/javascript" src="{{asset('js/mainJs.js')}}"></script>
-        <script type="text/javascript" src="{{asset('js/new_collection_widget.js')}}"></script>
+        {{ encore_entry_script_tags('app') }}
+
         {% block javascripts %}{% endblock %}
     </body>
 </html>
