@@ -5,9 +5,9 @@
        <div class="alert alert-success">
           {% if app.user.picture is defined %}
             {# if user has  no picture stored use default avaatr#}
-            <img src="{{asset('uploads/images/'~ app.user.picture[0])}}" class="rounded-circle img-fluid" style="max-width: 40px;">
+            <img src="{{preload(asset('build/uploads/images/'~ app.user.picture[0]))}}" class="rounded-circle img-fluid" style="max-width: 40px;">
             {% else %}
-            <img src="{{asset('img/avatar-user.jpg')}}" class="rounded-circle img-fluid" style="max-width: 40px;">
+            <img src="{{preload(asset('build/avatar-user.jpg'))}}" class="rounded-circle img-fluid" style="max-width: 40px;">
           {% endif %}
 
          <strong>{{comment.user.nickName}}</strong><i> à écrit le {{comment.creationDate|date("d-m-Y")}}</i> : <strong>{{comment.content}}</strong> 

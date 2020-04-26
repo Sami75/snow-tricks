@@ -5,17 +5,17 @@
 {% block body %} 
 {% block cover %}{% endblock %}
 <!-- Jumbotron -->
-<div class="card card-image" style="background-image: url('{{ asset('uploads/images/' ~ trick.getFirstImg)}}'), url('{{ asset('img/non-disponible.jpg')}}');background-repeat: no-repeat; background-size: cover; background-position: center;">
+<div class="card card-image" style="background-image: url('{{ preload(asset('build/uploads/images/' ~ trick.getFirstImg()))}}'), url('{{ asset('img/non-disponible.jpg')}}');background-repeat: no-repeat; background-size: cover; background-position: center;">
   <div class="text-white text-center rgba-stylish-strong py-5 px-4">
     <div class="edit-delete-btn">
-      <a href="{{ path('trick_edit', {'id': trick.id})}}" class="btn btn-warning btn-sm">edit</a>
+      <a href="{{ path('trick_edit', {'id': trick.getId()})}}" class="btn btn-warning btn-sm">edit</a>
       {{ include('member/_delete_form.html.twig') }}
     </div>
     <div class="py-5">
 
       <!-- Content -->
       <h2 class="h2 orange-text"><i class="fas fa-snowboarding"></i></h2>
-      <h1 class="card-title h2 my-4 py-2">{{ trick.name }}</h1>
+      <h1 class="card-title h2 my-4 py-2">{{ trick.getName() }}</h1>
 
     </div>
   </div>
@@ -26,7 +26,7 @@
 
  {% for file in trick.getImgDocs() %}
  <div class="col-sm-6 col-md-4 col-lg-3 m-0 p-3">
-    <a><img src="{{ asset('uploads/images/' ~ file)}}" class="thumbnails-docs" data-toggle="modal" data-target="#modal{{(file|split('.')|first)}}"></a>
+    <a><img src="{{ preload(asset('build/uploads/images/' ~ file))}}" class="thumbnails-docs" data-toggle="modal" data-target="#modal{{(file|split('.')|first)}}"></a>
 
 
   <!--Modal: modalYT-->
@@ -40,7 +40,7 @@
         <div class="modal-body mb-0 p-0">
 
           <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
-              <img src="{{ asset('uploads/images/' ~ file)}}" class="embed-responsive-item">
+              <img src="{{ preload(asset('build/uploads/images/' ~ file))}}" class="embed-responsive-item">
           </div>
         </div>
 
@@ -55,7 +55,7 @@
 
   {% for file in trick.getVideoDocs() %}
  <div class="col-sm-6 col-md-4 col-lg-3 m-0 p-3">
-    <a><img src="{{ asset('img/video-icon.jpg')}}" class="thumbnails-docs" data-toggle="modal" data-target="#modal{{(file|split('.')|first)}}"></a>
+    <a><img src="{{ preload(asset('build/video-icon.jpg'))}}" class="thumbnails-docs" data-toggle="modal" data-target="#modal{{(file|split('.')|first)}}"></a>
 
 
   <!--Modal: modalYT-->
@@ -71,7 +71,7 @@
           <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
 
             <video  class="embed-responsive-item" controls>
-              <source src="{{ asset('uploads/images/' ~ file)}}" type="video/mp4" allowfullscreen>
+              <source src="{{ preload(asset('uploads/images/' ~ file))}}" type="video/mp4" allowfullscreen>
             </video>
 
           </div>
@@ -98,7 +98,7 @@
     <!-- Title -->
     <h4 class="card-title"><strong>Description</strong></h4>
     <!-- Text -->
-    <p class="card-text">{{trick.description}}</p>
+    <p class="card-text">{{trick.getDescription()}}</p>
     <hr>
     <div class="trick-info-collapse">
       <p>
