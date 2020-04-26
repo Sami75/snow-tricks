@@ -48,14 +48,14 @@ class AppFixtures extends Fixture
             // $trick->addImgDoc("4002d37a3879c2d63c8e6aed7ad31449.jpeg");
             $imageFile = [];
 
-            if (is_file($this->rootDirectory .'/public/img/fixtures/img/img-'. ($i+1) .'.jpg')) {
-                $imageFile[] = new File($this->rootDirectory .'/public/img/fixtures/img/img-'. ($i+1) .'.jpg', 'img-'. ($i+1) .'.jpg', 'image/jpeg', null, null, true);
+            if (is_file($this->rootDirectory .'/assets/images/uploads/images/img-'. ($i+1) .'.jpg')) {
+                $imageFile[] = new File($this->rootDirectory .'/assets/images/uploads/images/img-'. ($i+1) .'.jpg', 'img-'. ($i+1) .'.jpg', 'image/jpeg', null, null, true);
             }
 
             $videoFile = [];
 
-            if (is_file($this->rootDirectory .'/public/img/fixtures/video/video-'. ($i+1) .'.mp4')) {
-                $videoFile[] = new File($this->rootDirectory .'/public/img/fixtures/video/video-'. ($i+1) .'.mp4', 'video-'. ($i+1) .'.mp4', 'video/mp4', null, null, true);
+            if (is_file($this->rootDirectory .'/assets/images/uploads/images/video-'. ($i+1) .'.mp4')) {
+                $videoFile[] = new File($this->rootDirectory .'/assets/images/uploads/images/video-'. ($i+1) .'.mp4', 'video-'. ($i+1) .'.mp4', 'video/mp4', null, null, true);
             }
 
 
