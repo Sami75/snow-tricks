@@ -45,7 +45,7 @@ class TemporaryFileManager
     {
         $files = [];
         foreach ($array as $file) {
-            $files[] = new File($this->rootDirectory.'/public/uploads/images/'. $file);
+            $files[] = new File($this->rootDirectory.'/public/build/uploads/images/'. $file);
         }
         return $files;
     }

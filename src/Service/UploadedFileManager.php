@@ -45,7 +45,7 @@ class UploadedFileManager
                 // Move the file to the directory where images are stored
                 try {
                     $file->move(
-                      $this->rootDirectory. '/public/uploads/images',
+                      $this->rootDirectory. '/public/build/uploads/images',
                       $fileName
                   );
                 } catch (FileException $e) {
